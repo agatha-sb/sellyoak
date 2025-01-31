@@ -5,15 +5,15 @@ function setupGSAPAnimations() {
   gsap.globalTimeline.clear();
 
   if (window.innerWidth > 991) {
-    gsap.to("section[class^='oak__']", {
-      ease: "none",
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "bottom true",
-        scrub: true,
-      },
-    });
+    // gsap.to("section[class^='oak__']", {
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: "body",
+    //     start: "top top",
+    //     end: "bottom true",
+    //     scrub: true,
+    //   },
+    // });
 
     gsap.utils.toArray(".oak__marquee").forEach((section) => {
       const marquee1 = section.querySelector(".marquee-1");

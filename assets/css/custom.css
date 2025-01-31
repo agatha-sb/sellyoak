@@ -1000,3 +1000,55 @@ textarea.form-control {
 
 
 /** =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ INNER PAGES START =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ */
+
+/* INNER BANNER */
+.oak__heading h1 {
+  font-family: var(--ff-primary);
+  font-size: 46px;
+  text-transform: capitalize;
+  line-height: 55px;
+}
+.oak__breadcrumb .breadcrumb {
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: var(--clr-accent);
+  padding: 14px 25px;
+  border-radius: 50px;
+}
+.oak__breadcrumb .breadcrumb .breadcrumb-item {
+  font-size: 16px;
+  font-weight: 500;
+}
+.oak__breadcrumb .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: '-';
+}
+.oak__breadcrumb .breadcrumb .breadcrumb-item a {
+  color: var(--clr-black);
+}
+.oak__hero-inner .oak__hero-main {
+  top: 50%;
+  margin-top: 35px;
+}
+/* INNER BANNER */
+
+.oak__header-nav .offcanvas .nav-link {
+  --bs-nav-link-color: #FFE2A0;
+  font-size: 30px;
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #FFE2A080;
+}
+.oak__header-nav .offcanvas {
+  --bs-offcanvas-bg: #1e1914;
+  --bs-offcanvas-color: var(--clr-accent);
+  --bs-offcanvas-width: 100%;
+  text-align: center;
+}
+/* .oak__header-nav .offcanvas .nav-item:nth-child(2n+1) .nav-link {
+  padding-left: 70px;
+}
+.oak__header-nav .offcanvas .nav-item:nth-child(2n) .nav-link {
+  padding-right: 70px;
+} */
