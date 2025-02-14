@@ -79,7 +79,42 @@ var productSwiper = new Swiper(".oak__products-swiper", {
     }
   }
 });
+var timelineSwiper = new Swiper(".oak__timeline-swiper", {
+  // spaceBetween: 10,
+  autoplay: {
+    delay: 8000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: ".swiper-pagination", 
+    type: 'bullets',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next-timeline",
+    prevEl: ".swiper-button-prev-timeline",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    1024: {
+      slidesPerView: 3,
+    }
+  }
+});
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll("#oak__culture-tab .nav-link");
+
+  navLinks.forEach(link => {
+    link.addEventListener("mouseenter", function () {
+      let tab = new bootstrap.Tab(this);
+      tab.show();
+    });
+  });
+});
 
 const videoContainer = document.getElementById("oakVideoWrap");
 const playButton = document.getElementById("oakPlayBtn");

@@ -97,6 +97,98 @@ function setupGSAPAnimations() {
       );
     });
 
+    // const rightColumn = document.querySelector(".oak__product-info-right");
+    // let tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".oak__product-info",
+    //     markers: true,
+    //     start: "0 0",
+    //     end: "+=2000",
+    //     pin: true,
+    //     scrub: true
+    //   }
+    // });
+    
+    // tl.to(rightColumn, {
+    //   y: window.innerHeight - rightColumn.scrollHeight,
+    //   ease: "none"
+    // });
+
+
+
+    // Select elements
+  
+
+  // gsap.to(".oak__img img", {
+  //   scale: 1.3, // Scale up to 1.3x
+  //   duration: 1,
+  //   ease: "power2.out",
+  //   scrollTrigger: {
+  //     trigger: ".oak__product-collection",
+  //     start: "top center", // Animation starts when the top of the section reaches the center of viewport
+  //     end: "bottom top", // Animation ends when bottom of section reaches top of viewport
+  //     scrub: 1 // Smooth scrub effect
+  //   }
+  // });
+  gsap.utils.toArray(".oak__media-scale > *").forEach((img) => {
+    gsap.fromTo(
+      img,
+      { scale: 0.4 }, // Start small
+      {
+        scale: 1.1, // Scale up
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".oak__media-scale",
+          start: "top center",
+          end: "bottom top",
+          scrub: 1
+        }
+      }
+    );
+  });
+
+
+  gsap.utils.toArray(".oak__process-single").forEach((item, index) => {
+    const isEven = index % 2 !== 0; // Check if the index is even (odd in zero-based indexing)
+    const left = item.querySelector(".oak__process-left");
+    const right = item.querySelector(".oak__process-right");
+    
+    // Slide-in animation
+    gsap.fromTo(left, 
+    { scale: 0.9,autoAlpha: 0, opacity: 0, x: isEven ? 80 : -80 }, 
+    { scale: 1,autoAlpha: 1, opacity: 1, x: 0, duration: 1.25, ease: "back",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 100%",
+        end: "bottom 20%",
+        scrub: 1,
+      }
+    });
+
+    gsap.fromTo(right, 
+    { scale: 0.9, opacity: 0, x: isEven ? -80 : 80 }, 
+    { scale: 1, opacity: 1, x: 0, duration: 1.25, ease: "back",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 100%",
+        end: "bottom 20%",
+        scrub: 1,
+      }
+    });
+
+    // Parallax effect on images
+    gsap.to(item.querySelectorAll(".oak__process-single > [class^='oak__process-']"), {
+      y: -50, // Adjust for more/less movement
+      ease: "none",
+      scrollTrigger: {
+        trigger: item,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 3,
+      }
+    });
+});
     // 02. Reveal Up: any element
     gsap.utils.toArray(".oak__reveal-up > *").forEach(function (elem) {
       ScrollTrigger.create({
